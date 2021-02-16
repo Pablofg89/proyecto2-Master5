@@ -1,7 +1,7 @@
 //Validacion de los inputs
 
-var usuario = document.getElementById('usuario');
-var password = document.getElementById('password');
+var usuario = document.getElementById('usuario').value;
+var password = document.getElementById('password').value;
 
 let error_usuario = document.getElementById('error_usuario');
 let error_password = document.getElementById('error_password');
@@ -23,6 +23,8 @@ var cuentas  = [{
     }
 ];
 
+console.log(usuario);
+console.log(password);
 function validacion() {
     if(usuario.value.length < 3){
         usuario.style.border = "1px solid red";
@@ -30,7 +32,7 @@ function validacion() {
         usuario.focus();
         return false;
     }
-    if(password.value.length < 3){
+    if(password.value.length < 3){sA
         password.style.border = "1px solid red";
         error_password.style.display= "block";
         password.focus();
@@ -38,18 +40,16 @@ function validacion() {
     }
     for (let i = 0; i < cuentas.length ; i++){
         let element = cuentas[i];
-        if((element.nombre == usuario) && (element.password == password)){
+        if(element.nombre == usuario && element.password == password){
             alert(usuario);
-             return true;
-           
+            
         }else{
             usuario.style.border = "1px solid red";
             error_usuario.style.display= "block";
             password.style.border = "1px solid red";
             serror_password.style.display= "block";
-        
-        return false;
-           
+        return false;           
         }
     }
+    return false;
 }
