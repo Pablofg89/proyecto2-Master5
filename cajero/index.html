@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+​
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- Bootstrap link -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+  <!-- CSS File -->
+  <link rel="stylesheet" href="./style.css">
+  <title>Cajero Automatico</title>
+</head>
+
+<body>
+
+  <div class="container sm md lg">
+    <h1 class="title_registro">Inicio de Sección</h1>
+    <form class="login_form" action="./homepage.html" name="form" method="GET" onsubmit="return validacion()">
+      <div class="title_user"> Usuario</div>
+      <input id="usuario" type="text" name="usuario" autocomplete="off" required>
+      <div id="error_usuario">Por favor ingresa su usuario.</div>
+      <div class="password"> Password</div>
+      <input id="password" type="password" name="password" autocomplete="off" required>
+      <div id="error_password">Por favor ingresa su password.</div>
+      <button type="submit">Login</button>
+    </form>
+  </div>
+
+  <!-- JS File -->
+  <script src="./app.js"></script>
+</body>
+
+</html>
