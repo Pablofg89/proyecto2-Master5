@@ -1,11 +1,5 @@
 //Validacion de los inputs
 
-var usuario = document.getElementById('usuario').value;
-var password = document.getElementById('password').value;
-
-let error_usuario = document.getElementById('error_usuario');
-let error_password = document.getElementById('error_password');
-
 var cuentas  = [{
         "nombre": "Hiromi",
         "saldo": 200,
@@ -23,33 +17,35 @@ var cuentas  = [{
     }
 ];
 
-console.log(usuario);
-console.log(password);
+
 function validacion() {
+    let usuario = document.getElementById('usuario');
+    let password = document.getElementById('password');
+
+    let error_usuario = document.getElementById('error_usuario');
+    let error_password = document.getElementById('error_password');
+
     if(usuario.value.length < 3){
         usuario.style.border = "1px solid red";
         error_usuario.style.display= "block";
         usuario.focus();
         return false;
     }
-    if(password.value.length < 3){sA
+    if(password.value.length < 3){
         password.style.border = "1px solid red";
         error_password.style.display= "block";
         password.focus();
         return false;
     }
+    
+    let usuarioValido = false;
+    
     for (let i = 0; i < cuentas.length ; i++){
         let element = cuentas[i];
-        if(element.nombre == usuario && element.password == password){
-            alert(usuario);
-            
-        }else{
-            usuario.style.border = "1px solid red";
-            error_usuario.style.display= "block";
-            password.style.border = "1px solid red";
-            serror_password.style.display= "block";
-        return false;           
+        if((element.nombre == usuario) && (element.password == password)){
+            usuarioValido = true;  
+           
         }
-    }
-    return false;
+    } 
+    return usuarioValido;
 }
