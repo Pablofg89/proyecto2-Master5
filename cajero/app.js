@@ -1,5 +1,3 @@
-//Validacion de los inputs
-
 var cuentas  = [{
         "nombre": "Hiromi",
         "saldo": 200,
@@ -17,6 +15,8 @@ var cuentas  = [{
     }
 ];
 
+let usuarioActual;
+let saldo = 0;
 
 function validacion() {
     let usuario = document.getElementById('usuario');
@@ -42,10 +42,15 @@ function validacion() {
     
     for (let i = 0; i < cuentas.length ; i++){
         let element = cuentas[i];
-        if((element.nombre == usuario) && (element.password == password)){
-            usuarioValido = true;  
-           
+        if((element.nombre == usuario.value) && (element.password == password.value)){
+            usuarioValido = true;
+            usuarioActual = cuentas[i]; 
+            console.log(usuarioActual); 
         }
     } 
     return usuarioValido;
+}
+
+function consultarSaldo(){
+    console.log(usuarioActual.saldo);  
 }

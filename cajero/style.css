@@ -103,6 +103,7 @@ h1{
 }
 .section .btn p {
     text-align: center;
+    margin-left: 38px;
 }
 .section .btn .btn-opciones{
     display: flex;
