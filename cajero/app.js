@@ -16,7 +16,9 @@ var cuentas  = [{
 ];
 
 let usuarioActual;
-let saldo = 0;
+let saldo;
+let deposito = 0;
+let retiro = 0;
 
 function validacion() {
     let usuario = document.getElementById('usuario');
@@ -44,13 +46,33 @@ function validacion() {
         let element = cuentas[i];
         if((element.nombre == usuario.value) && (element.password == password.value)){
             usuarioValido = true;
-            usuarioActual = cuentas[i]; 
-            console.log(usuarioActual); 
+            window.sessionStorage.setItem('usuario', usuario.value); 
+            window.sessionStorage.setItem('saldo',cuentas[i].saldo); 
+            
         }
-    } 
+   } 
     return usuarioValido;
 }
 
+usuarioActual = sessionStorage.getItem('usuario');
+saldo = parseInt(sessionStorage.getItem('saldo'));
+
 function consultarSaldo(){
-    console.log(usuarioActual.saldo);  
+    document.getElementById("consultar").value = saldo;
 }
+
+function depositarMonto() {
+    deposito = parseInt(document.getElementById("deposito").value);
+    saldo = saldo + deposito;
+    consultarSaldo();
+}
+
+function retirarMonto() {
+    retiro = document.getElementById("retirar")[0].value;
+    if (retiro > saldo) {
+      alert("Su fondo disposible no es suficiente");
+    } else {
+      saldo = (parseFloat(saldo) - parseFloat(retiro));
+      verificar();
+    }
+  }

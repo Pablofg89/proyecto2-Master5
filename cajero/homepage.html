@@ -15,24 +15,28 @@
 
 <body>
 
+
+
+
     <div class="container-user ">
         <div class="section">
             <H1>SELECCIONE UNA OPCION</H1>
             <div class="btn option-menu" role="group" aria-label="Basic outlined example">
                 <div class="btn-opciones">
-                    <button type="button" class="btn btn-outline-primary" onclick="consultarSaldo()">Consultar Saldo</button>
+                    <button type="submit" class="btn btn-outline-primary" onclick="consultarSaldo()">Consultar Saldo</button>
                     <p>Su saldo actual es de:</p>
-                    <input type="text" id="consultarSaldo">
+                    <input type="text" id="consultar" onclick="verificar()">
+                </div>
+                <!-- Boton para deposito -->
+                <div class="btn-opciones">
+                    <button type="submit" class="btn btn-outline-primary" onclick="depositarMonto()">Ingresar Monto</button>
+                    <p>Ingrese el monto que desea depositar:</p>
+                    <input type="text" id="deposito" placeholder="Ingrese un deposito">
                 </div>
                 <div class="btn-opciones">
-                    <button type="button" class="btn btn-outline-primary">Ingresar Monto</button>
+                    <button type="submit" class="btn btn-outline-primary"> Retirar Monto </button>
                     <p>Ingrese el monto que desea depositar:</p>
-                    <input type="text" name="deposito" id="deposito">
-                </div>
-                <div class="btn-opciones">
-                    <button type="button" class="btn btn-outline-primary"> Retirar Monto </button>
-                    <p>Ingrese el monto que desea depositar:</p>
-                    <input type="text" name="" id="">
+                    <input type="text" id="retirar">
                 </div>
             </div>
         </div>
