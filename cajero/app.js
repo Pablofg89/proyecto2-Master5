@@ -59,6 +59,9 @@ saldo = parseInt(sessionStorage.getItem('saldo'));
 
 function consultarSaldo(){
     document.getElementById("consultar").value = saldo;
+    let valor = document.getElementById('consultar');
+    console.log(saldo);
+    valor.innerHTML= ( '$' + saldo);
 }
 
 function depositarMonto() {
@@ -68,11 +71,12 @@ function depositarMonto() {
 }
 
 function retirarMonto() {
-    retiro = document.getElementById("retirar")[0].value;
+    retiro = document.getElementById("retirar").value;
     if (retiro > saldo) {
-      alert("Su fondo disposible no es suficiente");
+        error_retiroMonto.style.border = "1px solid red";
+        error_retiroMonto.style.display= "block";
     } else {
       saldo = (parseFloat(saldo) - parseFloat(retiro));
       verificar();
     }
-  }
+}

@@ -14,29 +14,28 @@
 </head>
 
 <body>
-
-
-
-
     <div class="container-user ">
         <div class="section">
             <H1>SELECCIONE UNA OPCION</H1>
             <div class="btn option-menu" role="group" aria-label="Basic outlined example">
+                 <!-- Boton para Saldo -->
                 <div class="btn-opciones">
                     <button type="submit" class="btn btn-outline-primary" onclick="consultarSaldo()">Consultar Saldo</button>
-                    <p>Su saldo actual es de:</p>
-                    <input type="text" id="consultar" onclick="verificar()">
+                    <p class="text-uno">Su saldo actual es de:</p>
+                    <span class="monto" type="text" id="consultar" onclick="verificar()"></span>
                 </div>
                 <!-- Boton para deposito -->
                 <div class="btn-opciones">
                     <button type="submit" class="btn btn-outline-primary" onclick="depositarMonto()">Ingresar Monto</button>
-                    <p>Ingrese el monto que desea depositar:</p>
+                    <p class="text-dos">Ingrese el monto que desea depositar: <br></p>
                     <input type="text" id="deposito" placeholder="Ingrese un deposito">
                 </div>
+                 <!-- Boton para Retirar -->
                 <div class="btn-opciones">
-                    <button type="submit" class="btn btn-outline-primary"> Retirar Monto </button>
+                    <button type="submit" class="btn btn-outline-primary" onclick="retirarMonto()"> Retirar Monto </button>
                     <p>Ingrese el monto que desea depositar:</p>
-                    <input type="text" id="retirar">
+                    <input type="text" id="retirar" >
+                    <div id="error_retiroMonto">Su fondo disposible no es suficiente</div>
                 </div>
             </div>
         </div>
