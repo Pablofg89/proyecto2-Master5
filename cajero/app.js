@@ -61,6 +61,7 @@ function consultarSaldo(){
     document.getElementById("consultar").value = saldo;
     let valor = document.getElementById('consultar');
     valor.innerHTML= ( '$' + saldo);
+    monto.style.
 }
 
 function depositarMonto() {
@@ -68,7 +69,6 @@ function depositarMonto() {
     saldo = saldo + deposito;
     consultarSaldo();
     document.getElementById("deposito").value = '';
-    
 }
 
 function retirarMonto() {
