@@ -60,7 +60,6 @@ saldo = parseInt(sessionStorage.getItem('saldo'));
 function consultarSaldo(){
     document.getElementById("consultar").value = saldo;
     let valor = document.getElementById('consultar');
-    console.log(saldo);
     valor.innerHTML= ( '$' + saldo);
 }
 
@@ -68,6 +67,8 @@ function depositarMonto() {
     deposito = parseInt(document.getElementById("deposito").value);
     saldo = saldo + deposito;
     consultarSaldo();
+    document.getElementById("deposito").value = '';
+    
 }
 
 function retirarMonto() {
@@ -77,6 +78,6 @@ function retirarMonto() {
         error_retiroMonto.style.display= "block";
     } else {
       saldo = (parseFloat(saldo) - parseFloat(retiro));
-      verificar();
+      consultarSaldo();
     }
 }
