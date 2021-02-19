@@ -65,9 +65,13 @@ function consultarSaldo(){
 
 function depositarMonto() {
     deposito = parseInt(document.getElementById("deposito").value);
+    if(deposito >= '900'){
+
+    }else{
     saldo = saldo + deposito;
     consultarSaldo();
     document.getElementById("deposito").value = '';
+    }
 }
 
 function retirarMonto() {
@@ -75,7 +79,10 @@ function retirarMonto() {
     if (retiro > saldo) {
         error_retiroMonto.style.border = "1px solid red";
         error_retiroMonto.style.display= "block";
-    } else {
+    }else if( saldo <= 10 ){
+        error_retiroMonto.style.border = "1px solid red";
+        error_retiroMonto.style.display= "block";
+    }else {
       saldo = (parseFloat(saldo) - parseFloat(retiro));
       consultarSaldo();
     }
