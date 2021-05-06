@@ -66,7 +66,7 @@ function consultarSaldo(){
 function depositarMonto() {
     deposito = parseInt(document.getElementById("deposito").value);
     if(deposito >= '900'){
-
+ 
     }else{
     saldo = saldo + deposito;
     consultarSaldo();
