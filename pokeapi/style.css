@@ -1,0 +1,19 @@
+.navbar-light .navbar-brand{
+    font-size: 2em;
+}
+
+.navbar-light .btn-outline-success{
+    color:black;
+    border-color: black;
+}
+
+.navbar-light .btn-outline-success:hover{
+    color: #ffffff;
+    background-color:#686161;
+    border-color: #686161;
+}
+
+#pokemons-container{
+    display: flex;
+    flex-wrap: wrap;
+}
