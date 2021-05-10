@@ -1,3 +1,10 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.background{
+    background-color: #0f00a5;
+}
 .navbar-light .navbar-brand{
     font-size: 2em;
 }
@@ -16,4 +23,21 @@
 #pokemons-container{
     display: flex;
     flex-wrap: wrap;
+}
+
+.card-title{
+    align-self: center;
+    font-family: fantasy;
+    font-family: 'Girassol', cursive;
+    font-weight: bold;
+    font-size: 21px;
+}
+.card-text{
+    font-family: 'Noto Sans KR', sans-serif;
+    align-self: center;
+}
+.card-tipo{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 13px;
+    
 }

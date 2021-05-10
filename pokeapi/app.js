@@ -37,22 +37,27 @@ let creatCards = (pokemones) => {
     let card = document.createElement("div");
     let titulo = document.createElement("h5");
     let descripcion = document.createElement("p");
+    let tipo = document.createElement("p");
     let imagen = document.createElement("img");
 
     card.setAttribute("class", "card h-100 d-flex flex-nowrap");
     card.style.width = "10rem";
+    card.style.margin="10px 10px";
 
     imagen.setAttribute("class", "card-img-top");
 
     titulo.setAttribute("class", "card-title");
     descripcion.setAttribute("class", "card-text");
+    tipo.setAttribute("class", "card-tipo");
     //Definir orden de los elementos
     contenedorPokemones.append(card);
-    card.append(imagen, titulo, descripcion);
+    card.append(imagen, titulo,tipo, descripcion);
 
     //Mostar informacion
-    titulo.innerText = pokemon.nombre;
+
+    titulo.innerText = pokemon.nombre.toUpperCase();
     descripcion.innerText = pokemon.tipos;
+    tipo.innerText= "Tipo: ";
     imagen.src = pokemon.urlImagen;
   });
 };
